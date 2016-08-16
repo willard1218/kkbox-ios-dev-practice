@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CD2A5551D629E51002D370B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A5541D629E51002D370B /* main.m */; };
+		5CD2A5581D629E51002D370B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A5571D629E51002D370B /* AppDelegate.m */; };
+		5CD2A55B1D629E51002D370B /* WLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A55A1D629E51002D370B /* WLViewController.m */; };
+		5CD2A55E1D629E51002D370B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD2A55C1D629E51002D370B /* Main.storyboard */; };
+		5CD2A5601D629E51002D370B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD2A55F1D629E51002D370B /* Assets.xcassets */; };
+		5CD2A5631D629E51002D370B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD2A5611D629E51002D370B /* LaunchScreen.storyboard */; };
+		5CD2A56E1D629E51002D370B /* WLSnakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A56D1D629E51002D370B /* WLSnakeTests.m */; };
+		5CD2A57A1D629EB0002D370B /* WLSnake.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A5791D629EB0002D370B /* WLSnake.m */; };
+		5CD2A57D1D629ECA002D370B /* WLSnakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A57C1D629ECA002D370B /* WLSnakeView.m */; };
+		5CD2A5801D629F69002D370B /* WLPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A57F1D629F69002D370B /* WLPoint.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CD2A56A1D629E51002D370B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CD2A5481D629E51002D370B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CD2A54F1D629E51002D370B;
+			remoteInfo = SneakGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5CD2A5501D629E51002D370B /* SneakGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SneakGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CD2A5541D629E51002D370B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5CD2A5561D629E51002D370B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5CD2A5571D629E51002D370B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5CD2A5591D629E51002D370B /* WLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLViewController.h; sourceTree = "<group>"; };
+		5CD2A55A1D629E51002D370B /* WLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLViewController.m; sourceTree = "<group>"; };
+		5CD2A55D1D629E51002D370B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5CD2A55F1D629E51002D370B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5CD2A5621D629E51002D370B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5CD2A5641D629E51002D370B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CD2A5691D629E51002D370B /* SneakGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SneakGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CD2A56D1D629E51002D370B /* WLSnakeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLSnakeTests.m; sourceTree = "<group>"; };
+		5CD2A56F1D629E51002D370B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CD2A5781D629EB0002D370B /* WLSnake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLSnake.h; sourceTree = "<group>"; };
+		5CD2A5791D629EB0002D370B /* WLSnake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLSnake.m; sourceTree = "<group>"; };
+		5CD2A57B1D629ECA002D370B /* WLSnakeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLSnakeView.h; sourceTree = "<group>"; };
+		5CD2A57C1D629ECA002D370B /* WLSnakeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLSnakeView.m; sourceTree = "<group>"; };
+		5CD2A57E1D629F69002D370B /* WLPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLPoint.h; sourceTree = "<group>"; };
+		5CD2A57F1D629F69002D370B /* WLPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLPoint.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5CD2A54D1D629E51002D370B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CD2A5661D629E51002D370B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5CD2A5471D629E51002D370B = {
+			isa = PBXGroup;
+			children = (
+				5CD2A5521D629E51002D370B /* SneakGame */,
+				5CD2A56C1D629E51002D370B /* SneakGameTests */,
+				5CD2A5511D629E51002D370B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5CD2A5511D629E51002D370B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CD2A5501D629E51002D370B /* SneakGame.app */,
+				5CD2A5691D629E51002D370B /* SneakGameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CD2A5521D629E51002D370B /* SneakGame */ = {
+			isa = PBXGroup;
+			children = (
+				5CD2A5561D629E51002D370B /* AppDelegate.h */,
+				5CD2A5571D629E51002D370B /* AppDelegate.m */,
+				5CD2A57E1D629F69002D370B /* WLPoint.h */,
+				5CD2A57F1D629F69002D370B /* WLPoint.m */,
+				5CD2A5781D629EB0002D370B /* WLSnake.h */,
+				5CD2A5791D629EB0002D370B /* WLSnake.m */,
+				5CD2A57B1D629ECA002D370B /* WLSnakeView.h */,
+				5CD2A57C1D629ECA002D370B /* WLSnakeView.m */,
+				5CD2A5591D629E51002D370B /* WLViewController.h */,
+				5CD2A55A1D629E51002D370B /* WLViewController.m */,
+				5CD2A55C1D629E51002D370B /* Main.storyboard */,
+				5CD2A55F1D629E51002D370B /* Assets.xcassets */,
+				5CD2A5611D629E51002D370B /* LaunchScreen.storyboard */,
+				5CD2A5641D629E51002D370B /* Info.plist */,
+				5CD2A5531D629E51002D370B /* Supporting Files */,
+			);
+			path = SneakGame;
+			sourceTree = "<group>";
+		};
+		5CD2A5531D629E51002D370B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CD2A5541D629E51002D370B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5CD2A56C1D629E51002D370B /* SneakGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				5CD2A56D1D629E51002D370B /* WLSnakeTests.m */,
+				5CD2A56F1D629E51002D370B /* Info.plist */,
+			);
+			path = SneakGameTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5CD2A54F1D629E51002D370B /* SneakGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CD2A5721D629E51002D370B /* Build configuration list for PBXNativeTarget "SneakGame" */;
+			buildPhases = (
+				5CD2A54C1D629E51002D370B /* Sources */,
+				5CD2A54D1D629E51002D370B /* Frameworks */,
+				5CD2A54E1D629E51002D370B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SneakGame;
+			productName = SneakGame;
+			productReference = 5CD2A5501D629E51002D370B /* SneakGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5CD2A5681D629E51002D370B /* SneakGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CD2A5751D629E51002D370B /* Build configuration list for PBXNativeTarget "SneakGameTests" */;
+			buildPhases = (
+				5CD2A5651D629E51002D370B /* Sources */,
+				5CD2A5661D629E51002D370B /* Frameworks */,
+				5CD2A5671D629E51002D370B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CD2A56B1D629E51002D370B /* PBXTargetDependency */,
+			);
+			name = SneakGameTests;
+			productName = SneakGameTests;
+			productReference = 5CD2A5691D629E51002D370B /* SneakGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CD2A5481D629E51002D370B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = willard;
+				TargetAttributes = {
+					5CD2A54F1D629E51002D370B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					5CD2A5681D629E51002D370B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 5CD2A54F1D629E51002D370B;
+					};
+				};
+			};
+			buildConfigurationList = 5CD2A54B1D629E51002D370B /* Build configuration list for PBXProject "SneakGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5CD2A5471D629E51002D370B;
+			productRefGroup = 5CD2A5511D629E51002D370B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5CD2A54F1D629E51002D370B /* SneakGame */,
+				5CD2A5681D629E51002D370B /* SneakGameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CD2A54E1D629E51002D370B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD2A5631D629E51002D370B /* LaunchScreen.storyboard in Resources */,
+				5CD2A5601D629E51002D370B /* Assets.xcassets in Resources */,
+				5CD2A55E1D629E51002D370B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CD2A5671D629E51002D370B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5CD2A54C1D629E51002D370B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD2A55B1D629E51002D370B /* WLViewController.m in Sources */,
+				5CD2A57A1D629EB0002D370B /* WLSnake.m in Sources */,
+				5CD2A5581D629E51002D370B /* AppDelegate.m in Sources */,
+				5CD2A5801D629F69002D370B /* WLPoint.m in Sources */,
+				5CD2A57D1D629ECA002D370B /* WLSnakeView.m in Sources */,
+				5CD2A5551D629E51002D370B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CD2A5651D629E51002D370B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD2A56E1D629E51002D370B /* WLSnakeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CD2A56B1D629E51002D370B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CD2A54F1D629E51002D370B /* SneakGame */;
+			targetProxy = 5CD2A56A1D629E51002D370B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5CD2A55C1D629E51002D370B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CD2A55D1D629E51002D370B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5CD2A5611D629E51002D370B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CD2A5621D629E51002D370B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CD2A5701D629E51002D370B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5CD2A5711D629E51002D370B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5CD2A5731D629E51002D370B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SneakGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willard.SneakGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5CD2A5741D629E51002D370B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SneakGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willard.SneakGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5CD2A5761D629E51002D370B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SneakGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willard.SneakGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SneakGame.app/SneakGame";
+			};
+			name = Debug;
+		};
+		5CD2A5771D629E51002D370B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SneakGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willard.SneakGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SneakGame.app/SneakGame";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CD2A54B1D629E51002D370B /* Build configuration list for PBXProject "SneakGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CD2A5701D629E51002D370B /* Debug */,
+				5CD2A5711D629E51002D370B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CD2A5721D629E51002D370B /* Build configuration list for PBXNativeTarget "SneakGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CD2A5731D629E51002D370B /* Debug */,
+				5CD2A5741D629E51002D370B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CD2A5751D629E51002D370B /* Build configuration list for PBXNativeTarget "SneakGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CD2A5761D629E51002D370B /* Debug */,
+				5CD2A5771D629E51002D370B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5CD2A5481D629E51002D370B /* Project object */;
+}

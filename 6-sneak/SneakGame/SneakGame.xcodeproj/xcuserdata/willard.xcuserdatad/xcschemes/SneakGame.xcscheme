@@ -39,6 +39,16 @@
                ReferencedContainer = "container:SneakGame.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5C59A0EB1D6355A30081AA7D"
+               BuildableName = "SneakGameTests222.xctest"
+               BlueprintName = "SneakGameTests222"
+               ReferencedContainer = "container:SneakGame.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

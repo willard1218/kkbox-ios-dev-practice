@@ -23,7 +23,6 @@
     return self;
 }
 
-
 - (void)moveByDirection:(WLMoveDirection)newDirection {
     [points removeLastObject];
 

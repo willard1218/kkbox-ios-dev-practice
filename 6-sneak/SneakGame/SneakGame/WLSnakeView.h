@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class WLSnake;
+@class WLPoint;
+@protocol WLSnakeViewDelegate <NSObject>
+- (WLSnake *)viewDidRequestSnake:(UIView *)view;
+- (WLPoint *)viewDidRequestFruit:(UIView *)view;
+@end
 
 @interface WLSnakeView : UIView
-
+@property(weak) id<WLSnakeViewDelegate> delegate;
 @end

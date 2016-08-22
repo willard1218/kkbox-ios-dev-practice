@@ -18,12 +18,11 @@
 
 - (void)setUp {
     [super setUp];
-
     snake = [[WLSnake alloc] init];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    snake = nil;
     [super tearDown];
 }
 
@@ -34,7 +33,7 @@
     [snake moveByDirection:WLMoveDirectionLeft];
     NSArray<WLPoint *> *currentPoints = [snake.points copy];
 
-    XCTAssertEqual([previousPoints count], [currentPoints count]);
+    XCTAssertEqual(previousPoints.count, currentPoints.count);
 
     XCTAssertEqual(currentPoints[0].x, 2);
     XCTAssertEqual(currentPoints[0].y, 4);
@@ -43,21 +42,68 @@
     XCTAssertTrue([currentPoints[2] isEqual:previousPoints[1]]);
 }
 
-- (void)testGrowUp {
+- (void)testGrowUpAtRightDirection {
     [self initPoints:@[ @[ @3, @4 ], @[ @4, @4 ], @[ @4, @5 ] ]];
 
     NSArray<WLPoint *> *previousPoints = [snake.points copy];
     [snake growUp];
     NSArray<WLPoint *> *currentPoints = [snake.points copy];
 
-    XCTAssertEqual([previousPoints count] + 1, [currentPoints count]);
+    XCTAssertEqual(previousPoints.count + 1, currentPoints.count);
     [previousPoints enumerateObjectsUsingBlock:^(WLPoint *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
       XCTAssertTrue([obj isEqual:currentPoints[idx]]);
     }];
 
-    WLPoint *tail = [currentPoints lastObject];
-    XCTAssertEqual(tail.x, 4);
-    XCTAssertEqual(tail.y, 6);
+    WLPoint *tail = currentPoints.lastObject;
+    XCTAssertTrue(tail.x == 4 && tail.y == 6);
+}
+
+- (void)testGrowUpAtLeftDirection {
+    [self initPoints:@[ @[ @3, @4 ], @[ @4, @4 ], @[ @4, @3 ] ]];
+
+    NSArray<WLPoint *> *previousPoints = [snake.points copy];
+    [snake growUp];
+    NSArray<WLPoint *> *currentPoints = [snake.points copy];
+
+    XCTAssertEqual(previousPoints.count + 1, currentPoints.count);
+    [previousPoints enumerateObjectsUsingBlock:^(WLPoint *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+      XCTAssertTrue([obj isEqual:currentPoints[idx]]);
+    }];
+
+    WLPoint *tail = currentPoints.lastObject;
+    XCTAssertTrue(tail.x == 4 && tail.y == 2);
+}
+
+- (void)testGrowUpAtUpDirection {
+    [self initPoints:@[ @[ @3, @4 ], @[ @4, @4 ], @[ @3, @4 ] ]];
+
+    NSArray<WLPoint *> *previousPoints = [snake.points copy];
+    [snake growUp];
+    NSArray<WLPoint *> *currentPoints = [snake.points copy];
+
+    XCTAssertEqual(previousPoints.count + 1, currentPoints.count);
+    [previousPoints enumerateObjectsUsingBlock:^(WLPoint *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+      XCTAssertTrue([obj isEqual:currentPoints[idx]]);
+    }];
+
+    WLPoint *tail = currentPoints.lastObject;
+    XCTAssertTrue(tail.x == 2 && tail.y == 4);
+}
+
+- (void)testGrowUpAtDownDirection {
+    [self initPoints:@[ @[ @3, @4 ], @[ @4, @4 ], @[ @5, @4 ] ]];
+
+    NSArray<WLPoint *> *previousPoints = [snake.points copy];
+    [snake growUp];
+    NSArray<WLPoint *> *currentPoints = [snake.points copy];
+
+    XCTAssertEqual(previousPoints.count + 1, currentPoints.count);
+    [previousPoints enumerateObjectsUsingBlock:^(WLPoint *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+      XCTAssertTrue([obj isEqual:currentPoints[idx]]);
+    }];
+
+    WLPoint *tail = currentPoints.lastObject;
+    XCTAssertTrue(tail.x == 6 && tail.y == 4);
 }
 
 - (void)testHeadIsTouchBody {
@@ -89,7 +135,7 @@
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+
     }];
 }
 

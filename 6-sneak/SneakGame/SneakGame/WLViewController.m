@@ -18,10 +18,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    float width = 50;
-    WLSnakeView *demoView = [[WLSnakeView alloc] initWithFrame:CGRectMake(60, 100, width, width)];
-    [self.view addSubview:demoView];
+    _snakeView = [[WLSnakeView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+    _snakeView.delegate = self;
+    [self.view addSubview:_snakeView];
     [self initSwipeRecognizer];
+    _snake = [[WLSnake alloc] init];
+    _snake.direction = WLMoveDirectionRight;
+    WLPoint *center = [[WLPoint alloc] initWithX:0 y:1];
+    WLPoint *center2 = [[WLPoint alloc] initWithX:1 y:1];
+    [_snake.points addObject:center];
+    [_snake.points addObject:center2];
+
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(move) userInfo:nil repeats:YES];
+}
+
+- (void)move {
+    [_snake moveByDirection:_snake.direction];
+    [_snakeView setNeedsDisplay];
+
+    if ([_snake headIsTouchBody]) {
+        NSLog(@"Game over");
+    }
 }
 
 - (void)initSwipeRecognizer {
@@ -39,38 +57,38 @@
       swipeGestureRecognizer.direction = (UISwipeGestureRecognizerDirection)[directions[idx] integerValue];
       [self.view addGestureRecognizer:swipeGestureRecognizer];
     }];
-
-//    UISwipeGestureRecognizer *swipeLeft =
-//        [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
-//    swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
-//    [self.view addGestureRecognizer:swipeLeft];
-//
-//    UISwipeGestureRecognizer *swipeRight =
-//        [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
-//    swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
-//    [self.view addGestureRecognizer:swipeRight];
-//
-//    UISwipeGestureRecognizer *swipeUp =
-//        [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeUp:)];
-//    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
-//    [self.view addGestureRecognizer:swipeUp];
-//
-//    UISwipeGestureRecognizer *swipeDown =
-//        [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDown:)];
-//    swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
-//    [self.view addGestureRecognizer:swipeDown];
 }
 
 - (void)swipeLeft:(UISwipeGestureRecognizer *)gestureRecognizer {
+    if (_snake.direction == WLMoveDirectionRight) {
+        return;
+    }
+
+    _snake.direction = WLMoveDirectionLeft;
 }
 
 - (void)swipeRight:(UISwipeGestureRecognizer *)gestureRecognizer {
+    if (_snake.direction == WLMoveDirectionLeft) {
+        return;
+    }
+
+    _snake.direction = WLMoveDirectionRight;
 }
 
 - (void)swipeUp:(UISwipeGestureRecognizer *)gestureRecognizer {
+    if (_snake.direction == WLMoveDirectionDown) {
+        return;
+    }
+
+    _snake.direction = WLMoveDirectionUp;
 }
 
 - (void)swipeDown:(UISwipeGestureRecognizer *)gestureRecognizer {
+    if (_snake.direction == WLMoveDirectionUp) {
+        return;
+    }
+
+    _snake.direction = WLMoveDirectionDown;
 }
 
 - (WLSnake *)viewDidRequestSnake:(UIView *)view {

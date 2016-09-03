@@ -57,12 +57,13 @@
     [_snakeView setNeedsDisplay];
 
     bool isGameOver = ([_snake headIsTouchBody]);
-    for (WLPoint *point in _snake.points) {
-        if (point.x < 0 || point.y < 0 || point.x >= _snakeView.numOfColumns || point.y >= _snakeView.numOfRows) {
-            isGameOver = true;
-            break;
-        }
-    }
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"x < 0 or "
+                                                               "y < 0 or "
+                                                               "x > %d or "
+                                                               "y > %d",
+                                                              (int)_snakeView.numOfColumns, (int)_snakeView.numOfRows];
+    isGameOver = isGameOver || [_snake.points filteredArrayUsingPredicate:predicate].count > 0;
 
     if (isGameOver) {
         UIImage *image = [UIImage imageNamed:@"Game_Over"];
@@ -101,9 +102,9 @@
         @(UISwipeGestureRecognizerDirectionDown)
     ];
 
-    [selectors enumerateObjectsUsingBlock:^(NSString *selecror, NSUInteger idx, BOOL *_Nonnull stop) {
+    [selectors enumerateObjectsUsingBlock:^(NSString *selector, NSUInteger idx, BOOL *_Nonnull stop) {
       UISwipeGestureRecognizer *swipeGestureRecognizer =
-          [[UISwipeGestureRecognizer alloc] initWithTarget:self action:NSSelectorFromString(selecror)];
+          [[UISwipeGestureRecognizer alloc] initWithTarget:self action:NSSelectorFromString(selector)];
       swipeGestureRecognizer.direction = (UISwipeGestureRecognizerDirection)[directions[idx] integerValue];
       [self.view addGestureRecognizer:swipeGestureRecognizer];
     }];

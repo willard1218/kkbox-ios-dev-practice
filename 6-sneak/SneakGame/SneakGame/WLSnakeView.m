@@ -39,9 +39,11 @@ static CGFloat kLengthOfSquare;
 - (void)drawFruit {
     WLPoint *fruitPoint = [self.delegate viewDidRequestFruit:self];
     CGRect rect = [self getRectWithPoint:fruitPoint];
-    UIView *view = [[UIView alloc] initWithFrame:rect];
-    view.backgroundColor = [UIColor redColor];
-    [self addSubview:view];
+    UIImage *image = [UIImage imageNamed:@"fruit"];
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    [imageView setFrame:rect];
+    
+    [self addSubview:imageView];
 }
 
 - (void)drawSnake {
@@ -57,13 +59,7 @@ static CGFloat kLengthOfSquare;
     }
 }
 
-- (void)drawGameOver {
-    UIImage *image = [UIImage imageNamed:@"Game_Over"];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    [imageView setFrame:CGRectMake(100 , 100, 50, 50)];
-    // [self removeSubviews];
-    [self addSubview:imageView];
-}
+
 
 - (CGRect)getRectWithPoint:(WLPoint *)point {
     float startX = [self convertToPoint:point.x];

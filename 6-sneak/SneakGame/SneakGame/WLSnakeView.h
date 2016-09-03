@@ -19,5 +19,5 @@
 
 @property NSUInteger numOfRows;
 @property NSUInteger numOfColumns;
-- (void)drawGameOver;
+
 @end

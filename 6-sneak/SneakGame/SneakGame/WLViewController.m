@@ -41,9 +41,19 @@
     [_snakeView setNeedsDisplay];
 
     bool isGameOver = ([_snake headIsTouchBody]);
+    for (WLPoint *point in _snake.points) {
+        if (point.x < 0 || point.y < 0 || point.x >= _snakeView.numOfColumns || point.y >= _snakeView.numOfRows) {
+            isGameOver = true;
+            break;
+        }
+    }
+
     if (isGameOver) {
-        [_snakeView drawGameOver];
-        [_snakeView setNeedsDisplay];
+        UIImage *image = [UIImage imageNamed:@"Game_Over"];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.frame = CGRectMake(0, 0, imageView.frame.size.width / 2, imageView.frame.size.height / 2);
+
+        [self.view addSubview:imageView];
         [_drawTimer invalidate];
         _drawTimer = nil;
     } else if ([_snake headIsTouchPoint:_fruit]) {

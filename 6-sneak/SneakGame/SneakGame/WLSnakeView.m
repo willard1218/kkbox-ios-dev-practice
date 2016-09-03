@@ -20,25 +20,11 @@ static CGFloat kLengthOfSquare;
         _numOfColumns = (self.frame.size.width ) / kLengthOfCell;
         _numOfRows = (self.frame.size.height ) / kLengthOfCell;
         self.backgroundColor = [UIColor whiteColor];
-
-        for (int i = 0; i < _numOfRows; i++) {
-            for (int j = 0; j < _numOfColumns; j++) {
-                WLPoint *point = [[WLPoint alloc] initWithX:i y:j];
-                CGRect r = [self getRectWithPoint:point];
-                UIView *view = [[UIView alloc] initWithFrame:r];
-                UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, r.size.width, r.size.height)];
-                label.textColor = [UIColor blackColor];
-                label.text = [NSString stringWithFormat:@"%d %d", (int)i, (int)j];
-                [view addSubview:label];
-                [self addSubview:view];
-            }
-        }
     }
     return self;
 }
 
 - (void)drawRect:(CGRect)rect {
-    //return;
     [self removeSubviews];
     [self drawSnake];
     [self drawFruit];
@@ -67,6 +53,7 @@ static CGFloat kLengthOfSquare;
     for (WLPoint *point in points) {
         CGRect rect = [self getRectWithPoint:point];
         UIView *body = [[UIView alloc] initWithFrame:rect];
+        body.layer.cornerRadius = 20;
         body.backgroundColor = [UIColor greenColor];
         [self addSubview:body];
     }
@@ -80,7 +67,7 @@ static CGFloat kLengthOfSquare;
 }
 
 - (float)convertToPoint:(NSInteger)num {
-    return num * kLengthOfCell + kBorderWidth;
+    return num * kLengthOfCell;
 }
 
 @end

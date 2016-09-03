@@ -19,6 +19,4 @@
 
 @property NSUInteger numOfRows;
 @property NSUInteger numOfColumns;
-- (CGRect)getRectWithPoint:(WLPoint *)point;
-- (float)convertToPoint:(NSInteger)num;
 @end

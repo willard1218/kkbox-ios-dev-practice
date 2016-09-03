@@ -32,8 +32,9 @@
     _snake.direction = WLMoveDirectionRight;
     WLPoint *center = [[WLPoint alloc] initWithX:0 y:1];
     WLPoint *center2 = [[WLPoint alloc] initWithX:1 y:1];
-    [_snake.points addObject:center];
     [_snake.points addObject:center2];
+    [_snake.points addObject:center];
+    
 }
 
 - (void)initSnakeView {

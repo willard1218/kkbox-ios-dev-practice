@@ -17,8 +17,8 @@ static CGFloat kLengthOfSquare;
     self = [super initWithFrame:frame];
     if (self) {
         kLengthOfSquare = kLengthOfCell - kBorderWidth;
-        _numOfRows = self.frame.size.height / kLengthOfCell;
-        _numOfColumns = self.frame.size.width / kLengthOfCell;
+        _numOfColumns = self.frame.size.height / kLengthOfCell;
+        _numOfRows = self.frame.size.width / kLengthOfCell;
         self.backgroundColor = [UIColor whiteColor];
     }
     return self;
@@ -40,9 +40,9 @@ static CGFloat kLengthOfSquare;
     WLPoint *fruitPoint = [self.delegate viewDidRequestFruit:self];
     CGRect rect = [self getRectWithPoint:fruitPoint];
     UIImage *image = [UIImage imageNamed:@"fruit"];
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     [imageView setFrame:rect];
-    
+
     [self addSubview:imageView];
 }
 
@@ -53,13 +53,10 @@ static CGFloat kLengthOfSquare;
     for (WLPoint *point in points) {
         CGRect rect = [self getRectWithPoint:point];
         UIView *body = [[UIView alloc] initWithFrame:rect];
-
         body.backgroundColor = [UIColor greenColor];
         [self addSubview:body];
     }
 }
-
-
 
 - (CGRect)getRectWithPoint:(WLPoint *)point {
     float startX = [self convertToPoint:point.x];

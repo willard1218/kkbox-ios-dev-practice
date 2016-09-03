@@ -33,7 +33,7 @@
     [self rearrangeFruit];
 
     _drawTimer =
-        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(move) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(move) userInfo:nil repeats:YES];
 }
 
 - (void)move {
@@ -42,7 +42,7 @@
 
     bool isGameOver = ([_snake headIsTouchBody]);
     for (WLPoint *point in _snake.points) {
-        if (point.x < 0 || point.y < 0 || point.x >= _snakeView.numOfColumns || point.y >= _snakeView.numOfRows) {
+        if (point.x < 0 || point.y < 0 || point.x >= _snakeView.numOfRows || point.y >= _snakeView.numOfColumns) {
             isGameOver = true;
             break;
         }
@@ -63,9 +63,8 @@
 }
 
 - (void)rearrangeFruit {
-    NSUInteger x = arc4random() % (_snakeView.numOfColumns - 2);
-    NSUInteger y = arc4random() % (_snakeView.numOfRows - 2);
-
+    NSUInteger x = arc4random() % (_snakeView.numOfColumns);
+    NSUInteger y = arc4random() % (_snakeView.numOfRows);
     _fruit = [[WLPoint alloc] initWithX:x y:y];
 }
 

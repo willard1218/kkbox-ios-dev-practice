@@ -65,14 +65,18 @@
     [points addObject:newTail];
 }
 
+- (bool)isTouchBodyWithPoint:(WLPoint *)point {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"x == %d and y == %d", (int)point.x, (int)point.y];
+
+    bool isTouched = ([[points filteredArrayUsingPredicate:predicate] count] > 0);
+    return isTouched;
+}
+
 - (bool)headIsTouchBody {
     WLPoint *head = points[0];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"x == %d and y == %d", (int)head.x, (int)head.y];
 
     bool isTouched = ([[points filteredArrayUsingPredicate:predicate] count] > 1);
-    if (isTouched) {
-        NSLog(@"");
-    }
     return isTouched;
 }
 

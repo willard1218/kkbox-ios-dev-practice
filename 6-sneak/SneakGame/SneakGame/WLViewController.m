@@ -11,29 +11,45 @@
 
 @interface WLViewController () <WLSnakeViewDelegate>
 @property(nonatomic, strong) NSTimer *drawTimer;
+@property(nonatomic) NSTimeInterval drawTimeInterval;
 @end
 
 @implementation WLViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    _snakeView = [[WLSnakeView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
-    _snakeView.delegate = self;
-    [self.view addSubview:_snakeView];
     [self initSwipeRecognizer];
+    [self initSnake];
+    [self initSnakeView];
+    [self rearrangeFruit];
+
+    _drawTimeInterval = 1;
+    [self setTimer:_drawTimeInterval];
+}
+
+- (void)initSnake {
     _snake = [[WLSnake alloc] init];
     _snake.direction = WLMoveDirectionRight;
     WLPoint *center = [[WLPoint alloc] initWithX:0 y:1];
     WLPoint *center2 = [[WLPoint alloc] initWithX:1 y:1];
     [_snake.points addObject:center];
     [_snake.points addObject:center2];
+}
 
-    [self rearrangeFruit];
+- (void)initSnakeView {
+    _snakeView = [[WLSnakeView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _snakeView.delegate = self;
+    [self.view addSubview:_snakeView];
+}
 
-    _drawTimer =
-        [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(move) userInfo:nil repeats:YES];
+- (void)setTimer:(NSTimeInterval)timeInterval {
+    [_drawTimer invalidate];
+    _drawTimer = nil;
+    _drawTimer = [NSTimer scheduledTimerWithTimeInterval:timeInterval
+                                                  target:self
+                                                selector:@selector(move)
+                                                userInfo:nil
+                                                 repeats:YES];
 }
 
 - (void)move {
@@ -42,7 +58,7 @@
 
     bool isGameOver = ([_snake headIsTouchBody]);
     for (WLPoint *point in _snake.points) {
-        if (point.x < 0 || point.y < 0 || point.x >= _snakeView.numOfRows || point.y >= _snakeView.numOfColumns) {
+        if (point.x < 0 || point.y < 0 || point.x >= _snakeView.numOfColumns || point.y >= _snakeView.numOfRows) {
             isGameOver = true;
             break;
         }
@@ -63,9 +79,17 @@
 }
 
 - (void)rearrangeFruit {
-    NSUInteger x = arc4random() % (_snakeView.numOfColumns);
-    NSUInteger y = arc4random() % (_snakeView.numOfRows);
-    _fruit = [[WLPoint alloc] initWithX:x y:y];
+    WLPoint *point;
+    do {
+        NSUInteger x = arc4random() % (_snakeView.numOfColumns);
+        NSUInteger y = arc4random() % (_snakeView.numOfRows);
+        point = [[WLPoint alloc] initWithX:x y:y];
+    } while ([_snake isTouchBodyWithPoint:point]);
+
+    _fruit = point;
+
+    _drawTimeInterval -= 0.1;
+    [self setTimer:_drawTimeInterval];
 }
 
 - (void)initSwipeRecognizer {

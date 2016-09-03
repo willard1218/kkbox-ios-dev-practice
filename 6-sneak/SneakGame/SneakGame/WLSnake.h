@@ -26,4 +26,5 @@ typedef NS_ENUM(NSInteger, WLMoveDirection) {
 - (void)growUp;
 - (bool)headIsTouchBody;
 - (bool)headIsTouchPoint:(WLPoint *)point;
+- (bool)isTouchBodyWithPoint:(WLPoint *)point;
 @end

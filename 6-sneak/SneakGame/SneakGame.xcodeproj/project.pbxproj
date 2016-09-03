@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C5722FF1D7AEB3C00F6E1E7 /* WLSnakeViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5722FE1D7AEB3C00F6E1E7 /* WLSnakeViewTests.m */; };
 		5CD2A5551D629E51002D370B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A5541D629E51002D370B /* main.m */; };
 		5CD2A5581D629E51002D370B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A5571D629E51002D370B /* AppDelegate.m */; };
 		5CD2A55B1D629E51002D370B /* WLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2A55A1D629E51002D370B /* WLViewController.m */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C5722FE1D7AEB3C00F6E1E7 /* WLSnakeViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLSnakeViewTests.m; sourceTree = "<group>"; };
 		5CD2A5501D629E51002D370B /* SneakGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SneakGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD2A5541D629E51002D370B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5CD2A5561D629E51002D370B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				5CD2A56D1D629E51002D370B /* WLSnakeTests.m */,
+				5C5722FE1D7AEB3C00F6E1E7 /* WLSnakeViewTests.m */,
 				5CD2A56F1D629E51002D370B /* Info.plist */,
 			);
 			path = SneakGameTests;
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5722FF1D7AEB3C00F6E1E7 /* WLSnakeViewTests.m in Sources */,
 				5CD2A56E1D629E51002D370B /* WLSnakeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

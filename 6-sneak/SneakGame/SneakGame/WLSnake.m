@@ -69,7 +69,11 @@
     WLPoint *head = points[0];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"x == %d and y == %d", (int)head.x, (int)head.y];
 
-    return ([[points filteredArrayUsingPredicate:predicate] count] > 1);
+    bool isTouched = ([[points filteredArrayUsingPredicate:predicate] count] > 1);
+    if (isTouched) {
+        NSLog(@"");
+    }
+    return isTouched;
 }
 
 - (bool)headIsTouchPoint:(WLPoint *)point {

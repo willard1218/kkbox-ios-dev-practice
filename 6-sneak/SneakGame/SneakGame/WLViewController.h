@@ -12,4 +12,5 @@
 @property(nonatomic, strong) WLSnake *snake;
 @property(nonatomic, strong) WLPoint *fruit;
 @property(nonatomic, strong) WLSnakeView *snakeView;
+
 @end

@@ -16,4 +16,8 @@
 
 @interface WLSnakeView : UIView
 @property(weak) id<WLSnakeViewDelegate> delegate;
+
+@property NSUInteger numOfRows;
+@property NSUInteger numOfColumns;
+- (void)drawGameOver;
 @end

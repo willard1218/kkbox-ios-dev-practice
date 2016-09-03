@@ -10,7 +10,7 @@
 #import "WLViewController.h"
 
 @interface WLViewController () <WLSnakeViewDelegate>
-
+@property(nonatomic, strong) NSTimer *drawTimer;
 @end
 
 @implementation WLViewController
@@ -30,21 +30,38 @@
     [_snake.points addObject:center];
     [_snake.points addObject:center2];
 
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(move) userInfo:nil repeats:YES];
+    [self rearrangeFruit];
+
+    _drawTimer =
+        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(move) userInfo:nil repeats:YES];
 }
 
 - (void)move {
     [_snake moveByDirection:_snake.direction];
     [_snakeView setNeedsDisplay];
 
-    if ([_snake headIsTouchBody]) {
-        NSLog(@"Game over");
+    bool isGameOver = ([_snake headIsTouchBody]);
+    if (isGameOver) {
+        [_snakeView drawGameOver];
+        [_snakeView setNeedsDisplay];
+        [_drawTimer invalidate];
+        _drawTimer = nil;
+    } else if ([_snake headIsTouchPoint:_fruit]) {
+        [self rearrangeFruit];
+        [_snake growUp];
     }
+}
+
+- (void)rearrangeFruit {
+    NSUInteger x = arc4random() % (_snakeView.numOfColumns - 2);
+    NSUInteger y = arc4random() % (_snakeView.numOfRows - 2);
+
+    _fruit = [[WLPoint alloc] initWithX:x y:y];
 }
 
 - (void)initSwipeRecognizer {
     NSArray *selectors = @[ @"swipeLeft:", @"swipeRight:", @"swipeUp:", @"swipeDown:" ];
-    NSArray *directions = @[
+    NSArray<NSNumber *> *directions = @[
         @(UISwipeGestureRecognizerDirectionLeft),
         @(UISwipeGestureRecognizerDirectionRight),
         @(UISwipeGestureRecognizerDirectionUp),
